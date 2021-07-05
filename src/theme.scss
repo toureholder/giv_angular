@@ -1,0 +1,68 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$giv-accent-palette: (
+  50: #fff8ee,
+  100: #ffedd4,
+  200: #ffe1b7,
+  300: #ffd59a,
+  400: #ffcc84,
+  500: #ffc36e,
+  600: #ffbd66,
+  700: #ffb55b,
+  800: #ffae51,
+  900: #ffa13f,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fff3e7,
+  A700: #ffe6ce,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$giv-angular-primary: mat.define-palette(mat.$blue-palette);
+$giv-angular-accent: mat.define-palette($giv-accent-palette);
+
+// The warn palette is optional (defaults to red).
+$giv-angular-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$giv-angular-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $giv-angular-primary,
+      accent: $giv-angular-accent,
+      warn: $giv-angular-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($giv-angular-theme);
