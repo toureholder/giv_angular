@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "analyze": "ng build --stats-json && webpack-bundle-analyzer ./dist/giv-angular/stats.json",
     "format:check": "prettier \"src/**/*.{html,ts,js,json,scss}\" --check",
     "format:write": "prettier \"src/**/*.{html,ts,js,json,scss}\" --write"
   },
@@ -49,6 +50,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "prettier": "^2.3.2",
     "prettier-eslint": "^12.0.0",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.2",
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }
