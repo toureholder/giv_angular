@@ -1,0 +1,130 @@
+.title {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3rem;
+  height: 3rem;
+  margin-block-start: var(--app-default-vertical-spacing);
+  margin-block-end: 2.075rem;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 135px);
+  grid-template-areas:
+    'a a'
+    'a a'
+    'b c'
+    'd d'
+    'd d'
+    'e f';
+}
+
+.skeleton {
+  background: var(--app-accent-color, lightgray);
+  border-radius: var(--app-default-border-radius);
+}
+
+[data-index='0'] {
+  grid-area: a;
+}
+
+[data-index='1'] {
+  grid-area: b;
+}
+
+[data-index='2'] {
+  grid-area: c;
+}
+
+[data-index='3'] {
+  grid-area: d;
+}
+
+[data-index='4'] {
+  grid-area: e;
+}
+
+[data-index='5'] {
+  grid-area: f;
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    grid-template-columns: 9fr 1fr;
+  }
+
+  .grid {
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 175px);
+    grid-template-areas:
+      'a a b'
+      'a a c'
+      'd e f';
+  }
+
+  [data-index='0'] {
+    grid-area: a;
+  }
+
+  [data-index='1'] {
+    grid-area: b;
+  }
+
+  [data-index='2'] {
+    grid-area: c;
+  }
+
+  [data-index='3'] {
+    grid-area: d;
+  }
+
+  [data-index='4'] {
+    grid-area: e;
+  }
+
+  [data-index='5'] {
+    grid-area: f;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    grid-template-columns: 4fr 3fr;
+  }
+
+  .grid {
+    grid-gap: 25px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 175px);
+    grid-template-areas:
+      'a a b d d e'
+      'a a c d d f';
+  }
+
+  [data-index='0'] {
+    grid-area: a;
+  }
+
+  [data-index='1'] {
+    grid-area: b;
+  }
+
+  [data-index='2'] {
+    grid-area: c;
+  }
+
+  [data-index='3'] {
+    grid-area: d;
+  }
+
+  [data-index='4'] {
+    grid-area: e;
+  }
+
+  [data-index='5'] {
+    grid-area: f;
+  }
+}

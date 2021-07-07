@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './layout/main/main.component';
 import { RouterModule } from '@angular/router';
 import { NavModule } from './layout/nav/nav.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [MainComponent],
@@ -12,6 +13,7 @@ import { NavModule } from './layout/nav/nav.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    HttpClientModule,
 
     // app
     NavModule,

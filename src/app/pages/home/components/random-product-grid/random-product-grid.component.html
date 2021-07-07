@@ -1,0 +1,13 @@
+<div
+  data-test="image-grid"
+  class="image-grid"
+  [attr.data-template]="computedTemplateOption"
+>
+  <div
+    *ngFor="let image of slicedImageList; index as i"
+    class="image-div"
+    [attr.data-index]="i"
+  >
+    <app-image-div [imageData]="image"></app-image-div>
+  </div>
+</div>

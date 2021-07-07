@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import { ImageDivModule } from './components/image-div/image-div.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [ImageDivModule],
+  exports: [ImageDivModule],
 })
-export class SharedModule { }
+export class SharedModule {}

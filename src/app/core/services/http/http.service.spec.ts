@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { UseValueProvider } from '@testing/helpers/useValue.provider';
+import { UseValueProvider } from '@testing/helpers';
 import { of } from 'rxjs';
 import { EnvironmentService } from '../environment/environment.service';
 import { HttpService } from './http.service';

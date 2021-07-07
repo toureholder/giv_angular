@@ -1,8 +1,8 @@
 import { Group, IGroup } from './group.model';
-import getFeaturedCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
+import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 
 describe('Group model', () => {
-  const fakekApiResponse = getFeaturedCategoriesJson;
+  const fakekApiResponse = getCategoriesJson;
 
   it('should have a static method to deserialize json object', () => {
     // Given

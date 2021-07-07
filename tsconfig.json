@@ -20,7 +20,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@testing/*": ["./src/testing/*"]
+      "@testing/*": ["./src/testing/*"],
+      "@shared/*": ["./src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {

@@ -9,3 +9,16 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+:root {
+  font-size: 62.5%;
+}
+
+.app-page-wrapper {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1224px;
+  padding-right: 2.4rem;
+  padding-left: 2.4rem;
+  height: 100%;
+}

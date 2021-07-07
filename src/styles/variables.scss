@@ -1,6 +1,12 @@
 :root {
+  /* spacing */
+  --app-default-vertical-spacing: 4.8rem;
+  --app-default-padding: 2.4rem;
+
   /* colors */
+  --app-accent-color: #ffc36e;
   --app-divider-color: #eee;
+  --app-light-gray: #f5f5f5;
 
   /* misc */
   --app-default-border-radius: 5px;

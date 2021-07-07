@@ -16,7 +16,7 @@ $giv-accent-palette: (
   200: #ffe1b7,
   300: #ffd59a,
   400: #ffcc84,
-  500: #ffc36e,
+  500: var(--app-accent-color),
   600: #ffbd66,
   700: #ffb55b,
   800: #ffae51,

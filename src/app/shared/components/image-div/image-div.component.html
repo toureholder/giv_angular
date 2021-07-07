@@ -1,0 +1,17 @@
+<div>
+  <a *ngIf="imageData?.link && hasAbsoluteLink" [href]="imageData?.link">
+    <ng-container *ngTemplateOutlet="image"></ng-container>
+  </a>
+
+  <a *ngIf="imageData?.link && !hasAbsoluteLink" [routerLink]="imageData?.link">
+    <ng-container *ngTemplateOutlet="image"></ng-container>
+  </a>
+
+  <div *ngIf="!imageData?.link">
+    <ng-container *ngTemplateOutlet="image"></ng-container>
+  </div>
+</div>
+
+<ng-template #image>
+  <img [src]="imageData?.imageUrl" [alt]="imageData?.imageAlt" />
+</ng-template>

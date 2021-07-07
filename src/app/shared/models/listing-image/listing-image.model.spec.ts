@@ -1,8 +1,8 @@
 import { ListingImage, IListingImage } from './listing-image.model';
-import getFeaturedCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
+import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 
 describe('ListingImage model', () => {
-  const fakekApiResponse = getFeaturedCategoriesJson;
+  const fakekApiResponse = getCategoriesJson;
 
   it('should be able to deserialize a json object', () => {
     const json = fakekApiResponse[0].listings[0].listing_images[0];

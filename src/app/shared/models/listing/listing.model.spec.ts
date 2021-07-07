@@ -1,4 +1,4 @@
-import getFeaturedCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
+import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from './listing.model';
 
@@ -35,7 +35,7 @@ describe('Listing model', () => {
 
   it('should have a static method to deserialize a json object', () => {
     // Arrange / Given
-    const json = getFeaturedCategoriesJson[0].listings[0];
+    const json = getCategoriesJson[0].listings[0];
     const firstListingImageJson = json.listing_images[0];
 
     // Act / When
@@ -59,7 +59,7 @@ describe('Listing model', () => {
 
   it('should have a static method to deserialize a list of json objects', () => {
     // Arrange / Given
-    const json = getFeaturedCategoriesJson[0].listings;
+    const json = getCategoriesJson[0].listings;
     const firstListingJson = json[0];
     const firstListingImageJson = firstListingJson.listing_images[0];
 

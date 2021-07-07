@@ -1,10 +1,10 @@
 import { ListingCategory } from './listing-category.model';
-import getFeaturedCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
+import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from '../listing/listing.model';
 
 describe('ListingCategory model', () => {
-  const fakekApiResponse = getFeaturedCategoriesJson;
+  const fakekApiResponse = getCategoriesJson;
 
   it('should be able to deserialize a json object', () => {
     // Arrange / Given
