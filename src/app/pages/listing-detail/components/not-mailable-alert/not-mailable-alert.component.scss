@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  margin-bottom: var(--app-default-spacing);
+  margin-top: calc(var(--app-default-spacing) * 2);
+}
+
+.spacer {
+  height: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}

@@ -1,3 +1,4 @@
+import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { User } from '../user/user.model';
 
@@ -5,22 +6,24 @@ export interface IListing {
   id: number;
   title: string;
   description: string;
-  countryId: string | undefined;
-  stateId: string | undefined;
-  cityId: string | undefined;
+  countryId?: string;
+  stateId?: string;
+  cityId?: string;
   listingImages: ListingImage[];
   user: User;
+  isMailable?: boolean;
 }
 
 export class Listing implements IListing {
   private _id: number;
   private _title: string;
   private _description: string;
-  private _countryId: string | undefined;
-  private _stateId: string | undefined;
-  private _cityId: string | undefined;
+  private _countryId?: string;
+  private _stateId?: string;
+  private _cityId?: string;
   private _listingImages: ListingImage[];
   private _user: User;
+  private _isMailable?: boolean;
 
   constructor({
     id,
@@ -31,6 +34,7 @@ export class Listing implements IListing {
     cityId,
     listingImages,
     user,
+    isMailable,
   }: IListing) {
     this._id = id;
     this._title = title;
@@ -40,6 +44,7 @@ export class Listing implements IListing {
     this._cityId = cityId;
     this._listingImages = this.sortByPostion(listingImages);
     this._user = user;
+    this._isMailable = isMailable || false;
   }
 
   public get id(): number {
@@ -74,6 +79,10 @@ export class Listing implements IListing {
     return this._user;
   }
 
+  public get isMailable(): boolean | undefined {
+    return this._isMailable;
+  }
+
   get featuredImage(): ListingImage | undefined {
     return this.listingImages.length === 0
       ? undefined
@@ -100,7 +109,15 @@ export class Listing implements IListing {
       cityId,
       listingImages,
       user,
+      isMailable: json.is_mailable,
     });
+  }
+
+  static example(options?: { isMailable: boolean }): Listing {
+    const exampleJson = getCategoriesJson[0].listings[0];
+    const copy = JSON.parse(JSON.stringify(exampleJson));
+    copy['is_mailable'] = options?.isMailable;
+    return Listing.fromJson(copy);
   }
 
   static getOneFake({

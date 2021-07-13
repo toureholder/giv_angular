@@ -1,0 +1,48 @@
+@import '../../../styles/breakpoints.scss';
+
+:host {
+  --app-list-tile-horizontal-padding: 2.4rem;
+  --app-image-div-height: 300px;
+  --listing-detail-avatar-size: 36px;
+}
+
+label {
+  display: inline-block;
+  color: var(--app-gray, gray);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.box.app-page-wrapper {
+  padding: 0;
+}
+
+@media only screen and (min-width: $tablet) {
+}
+
+@media only screen and (min-width: $desktop) {
+  :host {
+    --app-list-tile-horizontal-padding: 2.4rem;
+    --app-image-div-height: 550px;
+    --listing-detail-avatar-size: 36px;
+  }
+
+  .box {
+    display: flex;
+
+    .col {
+      flex: 1;
+      min-width: 0;
+    }
+
+    &.app-page-wrapper {
+      padding: 2.4rem;
+    }
+  }
+
+  .carousel-container {
+    border-radius: var(--app-default-border-radius);
+    margin: 2.4rem 2.4rem 0;
+    overflow: hidden;
+  }
+}

@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 3rem;
   height: 3rem;
-  margin-block-start: var(--app-default-vertical-spacing);
+  margin-block-start: calc(var(--app-default-spacing) * 4);
   margin-block-end: 2.075rem;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .skeleton {
-  background: var(--app-accent-color, lightgray);
+  background: var(--app-loading-skeleton-color, lightgray);
   border-radius: var(--app-default-border-radius);
 }
 

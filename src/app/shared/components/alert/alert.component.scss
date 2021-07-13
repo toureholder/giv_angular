@@ -1,0 +1,29 @@
+.alert {
+  border-radius: var(--app-default-border-radius);
+  border: 1px solid;
+  padding: 1.5rem;
+
+  &.warning {
+    color: var(--app-alert-warning-color, #856404);
+    background-color: var(--app-alert-warning-background-color, #fff3cd);
+    border-color: var(--app-alert-warning-border-color, #ffeeba);
+  }
+
+  &.success {
+    color: var(--app-alert-success-color, #155724);
+    background-color: var(--app-alert-success-background-color, #d4edda);
+    border-color: var(--app-alert-success-border-color, #c3e6cb);
+  }
+
+  &.danger {
+    color: var(--app-alert-danger-color, #721c24);
+    background-color: var(--app-alert-danger-background-color, #f8d7da);
+    border-color: var(--app-alert-danger-border-color, #f5c6cb);
+  }
+
+  &.info {
+    color: var(--app-alert-info-color, #383d41);
+    background-color: var(--app-alert-info-background-color, #e2e3e5);
+    border-color: var(--app-alert-info-border-color, #d6d8db);
+  }
+}

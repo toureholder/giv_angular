@@ -1,0 +1,16 @@
+<div
+  [ngClass]="'app-list-tile' + (isClickable ? ' clickable' : '')"
+  data-test="app-list-tile"
+  [attr.role]="isClickable ? 'button' : undefined"
+  (click)="onClick()"
+>
+  <ng-content select="[leading]"></ng-content>
+  <div class="app-list-tile-text-container">
+    <p class="mat-body-strong">
+      {{ title }}
+    </p>
+    <p class="mat-caption">
+      {{ subtitle }}
+    </p>
+  </div>
+</div>

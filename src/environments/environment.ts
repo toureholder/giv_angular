@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: 'https://giv-api.herokuapp.com',
+  customerServiceNumber: '5561999454459',
 };
 
 /*

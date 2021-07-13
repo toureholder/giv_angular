@@ -1,23 +1,21 @@
-<div id="homePage">
-  <div class="app-page-wrapper">
-    <!-- LOADING -->
-    <app-home-loading-state
-      *ngIf="getCategoriesRequest.isLoading === true"
-      data-test="loading-state"
-    >
-    </app-home-loading-state>
+<div class="app-page-wrapper">
+  <!-- LOADING -->
+  <app-home-loading-state
+    *ngIf="getCategoriesRequest.isLoading === true"
+    data-test="loading-state"
+  >
+  </app-home-loading-state>
 
-    <!-- SUCCESS -->
-    <div
-      data-test="success-state"
-      *ngIf="getCategoriesRequest.isSuccess === true"
-    >
-      <app-home-category-section
-        *ngFor="let category of categories; index as i"
-        [category]="category"
-        data-test="home-category"
-        [templateOption]="i === 0 ? '1' : undefined"
-      ></app-home-category-section>
-    </div>
+  <!-- SUCCESS -->
+  <div
+    data-test="success-state"
+    *ngIf="getCategoriesRequest.isSuccess === true"
+  >
+    <app-home-category-section
+      *ngFor="let category of categories; index as i"
+      [category]="category"
+      data-test="home-category"
+      [templateOption]="i === 0 ? '1' : undefined"
+    ></app-home-category-section>
   </div>
 </div>

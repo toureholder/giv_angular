@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { isAbsoultePath } from '@shared/utils/utils';
+import { isAbsoulteUri } from '@shared/utils/utils';
 
 export interface ImageData {
   imageUrl?: string;
@@ -18,6 +18,6 @@ export class ImageDivComponent implements OnInit {
 
   ngOnInit(): void {
     const link = this.imageData?.link;
-    this.hasAbsoluteLink = !!link && isAbsoultePath(link);
+    this.hasAbsoluteLink = !!link && isAbsoulteUri(link);
   }
 }

@@ -1,0 +1,18 @@
+<div
+  *ngIf="!imageDataList"
+  class="photo-carousel-skeleton"
+  data-test="photo-carousel-skeleton"
+></div>
+
+<swiper
+  [slidesPerView]="1"
+  [pagination]="true"
+  *ngIf="imageDataList"
+  data-test="photo-carousel"
+>
+  <ng-template swiperSlide *ngFor="let img of imageDataList">
+    <div class="image-div-container">
+      <app-image-div [imageData]="img"></app-image-div>
+    </div>
+  </ng-template>
+</swiper>

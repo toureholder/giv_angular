@@ -1,0 +1,15 @@
+<div id="notMailableAlert">
+  <app-alert [type]="'warning'">
+    <p>
+      {{
+        'listing_detail_no_shipping_alert_pt_1' | translate: { value: address }
+      }}
+    </p>
+
+    <div class="spacer"></div>
+
+    <p>
+      {{ 'listing_detail_no_shipping_alert_pt_2' | translate }}
+    </p>
+  </app-alert>
+</div>

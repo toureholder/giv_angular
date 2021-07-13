@@ -1,0 +1,9 @@
+<div
+  class="app-skeleton-subtitle"
+  *ngIf="!location"
+  data-test="listing-location-skeleton"
+></div>
+
+<p *ngIf="location" data-test="listing-location">
+  <strong>{{ location.mediumName }}</strong>
+</p>

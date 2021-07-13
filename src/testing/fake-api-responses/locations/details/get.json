@@ -1,0 +1,14 @@
+{
+  "country": {
+    "id": "3469034",
+    "name": "Brasil"
+  },
+  "state": {
+    "id": "3463504",
+    "name": "Distrito Federal"
+  },
+  "city": {
+    "id": "6324222",
+    "name": "Brasília"
+  }
+}

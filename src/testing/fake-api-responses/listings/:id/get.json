@@ -1,0 +1,37 @@
+{
+  "id": 69,
+  "title": "Blusa tomara que caia florida - Blue Steel",
+  "description": "A peça está bem conservada, mas em sinais de uso. Tamanho P.",
+  "geonames_city_id": "6324222",
+  "geonames_state_id": "3463504",
+  "geonames_country_id": "3469034",
+  "is_active": true,
+  "is_private": false,
+  "listing_type": "donation",
+  "updated_at": "2019-03-31T22:01:26.506Z",
+  "user": {
+    "id": 5,
+    "name": "Mildred Holder",
+    "country_calling_code": "55",
+    "phone_number": "61981629809",
+    "is_phone_verified": true,
+    "image_url": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2341064249278770&width=640&ext=1556066704&hash=AeTZceNlnDZCFkLw",
+    "bio": null,
+    "created_at": "2019-03-25T00:45:04.145Z"
+  },
+  "categories": [
+    {
+      "id": 16,
+      "simple_name": "Tamanho P",
+      "canonical_name": "Roupa feminina tamanho P"
+    }
+  ],
+  "groups": [],
+  "listing_images": [
+    {
+      "id": 242,
+      "url": "https://firebasestorage.googleapis.com/v0/b/givapp-938de.appspot.com/o/listings%2F1554069681133-8481c0e0-3260-11e9-e3d4-c97d7ddcbf9a.jpg?alt=media&token=fc7a5186-c2c4-4ada-a991-8a15ab8caf81",
+      "position": 0
+    }
+  ]
+}

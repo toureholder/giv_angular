@@ -13,6 +13,13 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'listing/:id',
+    loadChildren: () =>
+      import('./pages/listing-detail/listing-detail.module').then(
+        (m) => m.ListingDetailModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

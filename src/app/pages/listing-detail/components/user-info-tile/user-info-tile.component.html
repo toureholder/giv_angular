@@ -1,0 +1,15 @@
+<app-list-tile
+  [title]="user?.name"
+  [subtitle]="
+    ('shared_member_since_' | translate) +
+    (user?.createdAt | date: 'MMMM y':'':translateService.currentLang)
+  "
+>
+  <div leading class="user-avatar-container">
+    <span class="user-avatar-placeholder material-icons"> face </span>
+    <div
+      class="user-avatar"
+      [ngStyle]="{ 'background-image': 'url(\'' + this.user?.imageUrl + '\')' }"
+    ></div>
+  </div>
+</app-list-tile>

@@ -1,0 +1,54 @@
+<div id="listingDetailPage">
+  <div class="box app-page-wrapper">
+    <div class="col">
+      <div class="carousel-container">
+        <app-photo-carousel
+          [imageDataList]="imageDataList"
+        ></app-photo-carousel>
+      </div>
+    </div>
+
+    <div class="col">
+      <app-listing-detail-loading-state
+        *ngIf="!listing"
+      ></app-listing-detail-loading-state>
+
+      <div *ngIf="listing" data-test="listing-detail-page-content">
+        <div class="app-content-padding">
+          <h1>{{ listing?.title }}</h1>
+
+          <app-listing-location [location]="location"></app-listing-location>
+
+          <app-not-mailable-alert
+            *ngIf="!listing?.isMailable && location?.mediumName"
+            [address]="location?.mediumName"
+          >
+          </app-not-mailable-alert>
+
+          <app-i-want-it-button
+            *ngIf="
+              listing?.user?.countryCallingCode && listing?.user?.phoneNumber
+            "
+            [listingTitle]="listing?.title"
+            [phoneNumber]="
+              listing!.user!.countryCallingCode + listing!.user!.phoneNumber
+            "
+          ></app-i-want-it-button>
+
+          <label for="description" class="mat-caption">
+            {{ 'comon_description' | translate }}
+          </label>
+          <p id="description">{{ listing?.description }}</p>
+        </div>
+
+        <app-user-info-tile [user]="listing?.user"></app-user-info-tile>
+
+        <div class="app-vertical-divider"></div>
+
+        <app-report-listing-tile
+          [listingTitle]="listing?.title"
+        ></app-report-listing-tile>
+      </div>
+    </div>
+  </div>
+</div>

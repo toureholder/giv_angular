@@ -84,6 +84,11 @@ describe('Listing model', () => {
     );
   });
 
+  it('shoukd have a static method to generate a an example listing', () => {
+    // Act / When
+    expect(Listing.example()).toBeInstanceOf(Listing);
+  });
+
   it('shoukd have a static method to generate a fake list with n items', () => {
     // Arrange / Given
     const numberOfItems = 10;

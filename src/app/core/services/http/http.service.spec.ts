@@ -13,7 +13,11 @@ describe('HttpService', () => {
 
   beforeEach(() => {
     mockHttpClient = jasmine.createSpyObj('HttpClient', ['get']);
-    mockEnvironment = { production: false, baseApiUrl: 'https://example.com' };
+    mockEnvironment = {
+      production: false,
+      baseApiUrl: 'https://example.com',
+      customerServiceNumber: '1234567890',
+    };
 
     const httpProvider: UseValueProvider = {
       provide: HttpClient,

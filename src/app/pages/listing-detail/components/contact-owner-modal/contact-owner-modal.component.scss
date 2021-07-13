@@ -1,0 +1,26 @@
+@import '../../../../../styles/breakpoints.scss';
+
+button {
+  width: 100%;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  margin-right: var(--app-default-spacing);
+  font-size: 18px;
+}
+
+#contactOwnerModal {
+  padding: var(--app-default-spacing);
+}
+
+app-terms-links {
+  display: block;
+  margin-top: calc(var(--app-default-spacing) * 2);
+}
+
+@media only screen and (min-width: $desktop) {
+  #contactOwnerModal {
+    padding: calc(var(--app-default-spacing) * 2);
+  }
+}

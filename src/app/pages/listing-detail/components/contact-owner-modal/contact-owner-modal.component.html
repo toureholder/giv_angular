@@ -1,0 +1,19 @@
+<div id="contactOwnerModal">
+  <p>
+    <strong>{{ 'i_want_it_dialog_title' | translate }}</strong>
+  </p>
+
+  <button
+    mat-stroked-button
+    color="primary"
+    data-test="whatsapp-button"
+    (click)="onWhatsAppButtonClick()"
+  >
+    <span class="icon-whatsapp"></span>
+    <span>{{ 'i_want_it_dialog_whatsapp' | translate }}</span>
+  </button>
+
+  <app-terms-links>
+    <span>{{ 'terms_acceptance_caption_by_contacting_' | translate }}</span>
+  </app-terms-links>
+</div>

@@ -1,0 +1,24 @@
+.user-avatar-container {
+  position: relative;
+  width: var(--listing-detail-avatar-size, --app-default-avatar-size);
+  height: var(--listing-detail-avatar-size, --app-default-avatar-size);
+  margin-right: 2rem;
+
+  .user-avatar,
+  .user-avatar-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .user-avatar {
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .material-icons {
+    font-size: var(--listing-detail-avatar-size, --app-default-avatar-size);
+  }
+}

@@ -7,4 +7,5 @@ import { environment } from 'src/environments/environment';
 export class EnvironmentService {
   production: boolean = environment.production;
   baseApiUrl: string = environment.baseApiUrl;
+  customerServiceNumber: string = environment.customerServiceNumber;
 }

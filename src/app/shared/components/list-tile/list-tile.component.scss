@@ -1,0 +1,25 @@
+.app-list-tile {
+  display: flex;
+  align-items: center;
+  padding: var(--app-list-tile-vertical-padding, 2rem)
+    var(--app-list-tile-horizontal-padding, 0);
+
+  transition: all 300ms;
+
+  .app-list-tile-text-container {
+    flex: 1;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.clickable:hover {
+    cursor: pointer;
+    background-color: var(--app-lighter-gray);
+  }
+
+  &.clickable:active {
+    background-color: var(--app-light-gray);
+  }
+}

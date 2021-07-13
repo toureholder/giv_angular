@@ -34,7 +34,7 @@ export class HomeCategorySectionComponent implements OnInit {
       return {
         imageUrl: listing.featuredImage?.url,
         imageAlt: listing.title,
-        routerLink: '/listing' + listing.id,
+        link: '/listing/' + listing.id,
       };
     });
   }

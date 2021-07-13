@@ -1,5 +1,5 @@
 div {
-  height: 100%;
+  height: var(--app-image-div-height, 100%);
 }
 
 img {
