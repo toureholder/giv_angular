@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeCategorySectionComponent } from './components/home-category-section/home-category-section.component';
 import { HomeLoadingStateComponent } from './components/home-loading-state/home-loading-state.component';
 import { RandomProductGridModule } from './components/random-product-grid/random-product-grid.module';
+import { LandingPageModule } from './components/landing-page/landing-page.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RandomProductGridModule } from './components/random-product-grid/random
     HomeRoutingModule,
     SharedModule,
     RandomProductGridModule,
+    LandingPageModule,
   ],
   providers: [HomeService],
 })

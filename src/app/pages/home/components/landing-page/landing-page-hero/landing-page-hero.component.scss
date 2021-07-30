@@ -1,0 +1,56 @@
+@import '../../../../../../styles/breakpoints.scss';
+
+.box {
+  text-align: center;
+  padding: calc(var(--app-default-spacing) * 4) 0;
+  margin: auto;
+  max-width: 788px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 100;
+  }
+
+  app-store-links {
+    display: inline-block;
+    margin-top: calc(var(--app-default-spacing) * 2);
+  }
+
+  .text-container {
+    padding: 0 calc(var(--app-default-spacing) * 2);
+  }
+
+  .image-container {
+    padding-top: calc(var(--app-default-spacing) * 4);
+
+    & img {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .box {
+    text-align: left;
+    display: flex;
+
+    .col {
+      flex: 1;
+    }
+
+    .text-container {
+      padding-top: calc(var(--app-default-spacing) * 8);
+      padding-right: calc(var(--app-default-spacing) * 2);
+    }
+
+    .image-container {
+      padding-top: 0;
+      padding-left: calc(var(--app-default-spacing) * 2);
+    }
+  }
+}

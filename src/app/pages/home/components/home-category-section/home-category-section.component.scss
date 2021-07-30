@@ -1,3 +1,16 @@
-h2 {
+@import '../../../../../styles/breakpoints.scss';
+
+h3 {
   margin-block-start: calc(var(--app-default-spacing) * 4);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+
+@media screen and (min-width: $desktop) {
+  h3 {
+    text-align: start;
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
 }

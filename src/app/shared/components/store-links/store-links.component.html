@@ -1,0 +1,52 @@
+<div class="mobile-view">
+  <a [href]="data?.mobileStoreLink">
+    <button mat-flat-button color="primary" data-test="smart-button">
+      {{ 'landing_page_hero_download_the_app' | translate }}
+    </button>
+  </a>
+</div>
+
+<div
+  [ngClass]="'desktop-view' + (centerContent ? ' center-content' : '')"
+  data-test="desktop-view"
+>
+  <a
+    *ngIf="!useBadges && data?.playStoreLink"
+    [href]="data?.playStoreLink"
+    data-test="play-store-link"
+    class="store-link"
+  >
+    <span class="icon-android"></span>
+    <span> {{ 'landing_page_hero_android' | translate }} </span>
+  </a>
+
+  <a
+    *ngIf="!useBadges && data?.appStoreLink"
+    [href]="data?.appStoreLink"
+    data-test="app-store-link"
+    class="store-link"
+  >
+    <span class="icon-appleinc"></span>
+    <span> {{ 'landing_page_hero_ios' | translate }} </span>
+  </a>
+
+  <a
+    *ngIf="useBadges && data?.playStoreLink"
+    [href]="data?.playStoreLink"
+    data-test="play-store-badge"
+    class="store-badge"
+    ><img
+      [alt]="'Get it on Google Play'"
+      [src]="'/assets/play_store_en_badge_web_generic.png'"
+  /></a>
+
+  <a
+    *ngIf="useBadges && data?.appStoreLink"
+    [href]="data?.appStoreLink"
+    data-test="app-store-badge"
+    class="store-badge"
+    ><img
+      [alt]="'Download  on the App Store'"
+      [src]="'/assets/app_store_badge.svg'"
+  /></a>
+</div>

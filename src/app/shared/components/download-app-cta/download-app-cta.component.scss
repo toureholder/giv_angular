@@ -1,0 +1,111 @@
+@import '../../../../styles/breakpoints.scss';
+
+.container {
+  margin-top: calc(var(--app-default-spacing) * 4);
+  border-radius: var(--app-default-border-radius);
+  border: 1px solid #81b5e0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  grid-template-areas:
+    'a a'
+    'a a'
+    'b b'
+    'b b';
+}
+
+[data-index='0'] {
+  grid-area: a;
+  background-color: var(--app-accent-color);
+  background-image: url('/assets/download-app-cta-img.png');
+  background-size: cover;
+  background-position: center;
+
+  .image {
+    display: none;
+  }
+}
+
+[data-index='1'] {
+  grid-area: b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c8e6c9;
+
+  padding: calc(var(--app-default-spacing) * 4);
+  text-align: center;
+
+  p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: bold;
+  }
+
+  .links-container {
+    margin-top: calc(var(--app-default-spacing) * 2);
+    position: relative;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .skeleton {
+    border-radius: var(--app-default-border-radius);
+  }
+
+  .container {
+    margin-top: 25px;
+    border: 0;
+  }
+
+  .grid {
+    grid-gap: 25px;
+    grid-gap: var(--app-default-spacing);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 345px);
+    grid-template-areas: 'a a a a b b';
+  }
+
+  [data-index='0'] {
+    grid-area: a;
+    display: flex;
+    position: relative;
+    background-image: linear-gradient(
+      90deg,
+      #81b5e0 0%,
+      #e5b269 25%,
+      #81c784 75%,
+      #ba68c8 100%
+    );
+    padding: 1px;
+
+    .image {
+      display: block;
+      background-color: var(--app-accent-color);
+      background-image: url('/assets/download-app-cta-img.png');
+      background-size: cover;
+      width: 100%;
+      border-radius: var(--app-default-border-radius);
+    }
+  }
+
+  [data-index='1'] {
+    grid-area: b;
+    border: 1px solid #81c784;
+
+    p {
+      font-size: 2.4rem;
+      line-height: 3rem;
+    }
+  }
+}

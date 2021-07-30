@@ -1,4 +1,8 @@
+<app-landing-page></app-landing-page>
+
 <div class="app-page-wrapper">
+  <h2>Alguns anúncios</h2>
+
   <!-- LOADING -->
   <app-home-loading-state
     *ngIf="getCategoriesRequest.isLoading === true"
@@ -18,4 +22,12 @@
       [templateOption]="i === 0 ? '1' : undefined"
     ></app-home-category-section>
   </div>
+
+  <div class="app-vertical-divider"></div>
+
+  <app-download-app-cta
+    [storeLinks]="storeLinksData"
+    [centerStoreLinks]="true"
+    [useStoreBadges]="true"
+  ></app-download-app-cta>
 </div>

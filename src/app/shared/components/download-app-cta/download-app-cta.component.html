@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="grid">
+    <div data-index="0" class="skeleton">
+      <div class="image"></div>
+    </div>
+    <div data-index="1" class="skeleton">
+      <div>
+        <p>
+          {{ 'download_app_cta_text' | translate }}
+        </p>
+
+        <div class="links-container">
+          <app-store-links
+            [data]="storeLinks"
+            [centerContent]="centerStoreLinks"
+            [useBadges]="useStoreBadges"
+          ></app-store-links>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

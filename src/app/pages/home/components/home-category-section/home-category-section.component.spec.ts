@@ -1,10 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ImageDivComponent } from '../../../../shared/components/image-div/image-div.component';
 import { ListingCategory } from '../../../../shared/models/listing-category/listing-category.model';
-import { HomeCategorySectionComponent } from './home-category-section.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { assert } from '@testing/helpers';
 import { RandomProductGridModule } from '../random-product-grid/random-product-grid.module';
+import { HomeCategorySectionComponent } from './home-category-section.component';
 
 describe('HomeCategorySectionComponent', () => {
   let component: HomeCategorySectionComponent;

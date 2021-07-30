@@ -1,0 +1,22 @@
+@import '../../../styles/breakpoints.scss';
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.app-page-wrapper {
+  padding-top: calc(var(--app-default-spacing) * 6);
+  padding-bottom: calc(var(--app-default-spacing) * 6);
+}
+
+.app-vertical-divider {
+  display: none;
+}
+
+@media screen and (min-width: $desktop) {
+  .app-vertical-divider {
+    display: block;
+    margin: calc(var(--app-default-spacing) * 4.1) 0;
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../../../../../styles/breakpoints.scss';
+
+.column-content {
+  box-sizing: border-box;
+  height: 100%;
+  padding: calc(var(--app-default-spacing) * 6)
+    calc(var(--app-default-spacing) * 4);
+}
+
+[class^='feature-'] {
+  text-align: center;
+
+  h2 {
+    font-size: 3rem;
+    margin: 16px 0;
+  }
+
+  img {
+    width: 75%;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 100;
+  }
+}
+
+.feature-one {
+  background-color: #b1d9fa;
+}
+
+.feature-two {
+  background-color: #c8e6c9;
+}
+
+@media screen and (min-width: $tablet) {
+  .box {
+    display: flex;
+  }
+
+  .column-content {
+    max-width: 612px;
+    padding: calc(var(--app-default-spacing) * 4)
+      calc(var(--app-default-spacing) * 4) calc(var(--app-default-spacing) * 2)
+      calc(var(--app-default-spacing) * 4);
+  }
+
+  [class^='feature-'] {
+    flex: 1;
+
+    img {
+      width: 58%;
+      height: 58%;
+    }
+  }
+
+  .feature-one {
+    .column-content {
+      margin-left: auto;
+    }
+  }
+
+  .feature-two {
+    .column-content {
+      margin-right: auto;
+    }
+  }
+}

@@ -12,9 +12,49 @@ export const dictionary: L10nDictionary = {
     en: 'Description',
     pt: 'Descrição',
   },
+  download_app_cta_text: {
+    en: 'Baixe o app para ver todos os anúncios e para criar os seus.',
+    pt: 'Baixe o app para ver todos os anúncios e para criar os seus.',
+  },
   i_want_it: {
     en: 'I want it',
     pt: 'Eu quero',
+  },
+  landing_page_hero_download_the_app: {
+    en: 'Get the app',
+    pt: 'Baixe o app',
+  },
+  landing_page_hero_android: {
+    en: 'Android',
+    pt: 'Android',
+  },
+  landing_page_hero_ios: {
+    en: 'iOS',
+    pt: 'iOS',
+  },
+  landing_page_hero_title: {
+    en: 'Felicidade dupla face',
+    pt: 'Felicidade dupla face',
+  },
+  landing_page_hero_paragraph: {
+    en: 'Doar faz bem. Receber, também! Faça parte de uma rede de desapego por doações na sua cidade.',
+    pt: 'Doar faz bem. Receber, também! Faça parte de uma rede de desapego por doações na sua cidade.',
+  },
+  landing_page_feature_one_title: {
+    en: 'Doe',
+    pt: 'Doe',
+  },
+  landing_page_feature_one_paragraph: {
+    en: 'Que tal se livrar do acúmulo e dar um final feliz para itens em bom estado que você não usa há muito tempo?',
+    pt: 'Que tal se livrar do acúmulo e dar um final feliz para itens em bom estado que você não usa há muito tempo?',
+  },
+  landing_page_feature_two_title: {
+    en: 'Receba',
+    pt: 'Receba',
+  },
+  landing_page_feature_two_paragraph: {
+    en: 'Baixe o app e descubra o que está sendo doado na sua cidade. Se você se interessar por algo, é só pedir para o anunciante.',
+    pt: 'Baixe o app e descubra o que está sendo doado na sua cidade. Se você se interessar por algo, é só pedir para o anunciante.',
   },
   whatsapp_message_interested: {
     en: "Hello! I'm interested in the '{{ value }}' that you listed on Alguém Quer? :)",

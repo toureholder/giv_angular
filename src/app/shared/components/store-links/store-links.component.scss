@@ -1,0 +1,61 @@
+@import '../../../../styles/breakpoints.scss';
+
+.mobile-view {
+  button {
+    height: calc(var(--app-default-spacing) * 4);
+    width: calc(var(--app-default-spacing) * 15);
+    font-size: 1.8rem;
+    font-weight: 200;
+    border-radius: 290486px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.desktop-view {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: $tablet) {
+  .mobile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: flex;
+    flex-direction: column;
+
+    .store-link {
+      display: block;
+      color: var(--app-primary-color);
+      text-decoration: none;
+      font-weight: 100;
+      font-size: 2rem;
+      margin-bottom: calc(var(--app-default-spacing) * 2);
+
+      [class^='icon-'] {
+        margin-right: calc(var(--app-default-spacing) * 0.5);
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .store-badge {
+      margin-bottom: var(--app-default-spacing);
+
+      img {
+        width: 150px;
+      }
+    }
+
+    .center-content {
+      align-items: center;
+    }
+  }
+}

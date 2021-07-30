@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreLinksData } from '@shared/components/store-links/store-links.component';
 import {
   AsyncActionState,
   ComponentAsyncAction,
 } from '@shared/models/component_async_action/component_async_action';
 import { ListingCategory } from '@shared/models/listing-category/listing-category.model';
+import { StoreLinksService } from 'src/app/core/services/business/store-links/store-links.service';
 import { HomeService } from './services/home.service';
 
 @Component({
@@ -14,11 +16,16 @@ import { HomeService } from './services/home.service';
 export class HomeComponent implements OnInit {
   categories: ListingCategory[] = [];
   getCategoriesRequest = new ComponentAsyncAction();
+  storeLinksData?: StoreLinksData;
 
-  constructor(private homeService: HomeService) {}
+  constructor(
+    private homeService: HomeService,
+    private storeLinksService: StoreLinksService
+  ) {}
 
   ngOnInit(): void {
     this.loadCategories();
+    this.storeLinksData = this.storeLinksService.getStoreLinks();
   }
 
   private loadCategories(): void {
