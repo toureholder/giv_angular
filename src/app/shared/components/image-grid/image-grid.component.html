@@ -1,0 +1,10 @@
+<app-image-grid-loading-state *ngIf="!images"> </app-image-grid-loading-state>
+
+<div class="grid">
+  <div *ngFor="let i of images" class="grid-item" data-test="image-grid-item">
+    <div class="image-div-container">
+      <app-image-div [imageData]="i.image"></app-image-div>
+    </div>
+    <p>{{ i.title }}</p>
+  </div>
+</div>

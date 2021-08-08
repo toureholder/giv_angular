@@ -70,7 +70,6 @@
 
   .grid {
     grid-gap: 25px;
-    grid-gap: var(--app-default-spacing);
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(1, 345px);
     grid-template-areas: 'a a a a b b';

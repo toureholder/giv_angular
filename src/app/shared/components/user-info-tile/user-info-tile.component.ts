@@ -9,6 +9,7 @@ import { User } from '@shared/models/user/user.model';
 })
 export class UserInfoTileComponent {
   @Input() user?: User;
+  @Input() isClickable?: boolean;
 
   constructor(public translateService: TranslateService) {}
 }

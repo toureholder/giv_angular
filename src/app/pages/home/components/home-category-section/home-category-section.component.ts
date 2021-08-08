@@ -30,12 +30,6 @@ export class HomeCategorySectionComponent implements OnInit {
   }
 
   private prepareImageList() {
-    this.imageList = this.category?.listings.map((listing: Listing) => {
-      return {
-        imageUrl: listing.featuredImage?.url,
-        imageAlt: listing.title,
-        link: '/listing/' + listing.id,
-      };
-    });
+    this.imageList = Listing.listToImageDataList(this.category?.listings);
   }
 }

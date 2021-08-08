@@ -1,26 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
-import { UseValueProvider } from '@testing/helpers';
-import { of } from 'rxjs';
-import { ListingService } from 'src/app/core/services/business/listing/listing.service';
-import { ListingDetailComponent } from './listing-detail.component';
-import { Listing } from '@shared/models/listing/listing.model';
-import { SharedModule } from '@shared/shared.module';
-import { SwiperModule } from 'swiper/angular';
-import { ImageData } from '@shared/components/image-div/image-div.component';
-import { Location } from '@shared/models/location/location.model';
-import { LocationService } from 'src/app/core/services/business/location/location.service';
-import { LocationFilter } from '@shared/models/location-filter/location-filter.model';
-import { NotMailableAlertComponent } from './components/not-mailable-alert/not-mailable-alert.component';
-import { ReportListingTileComponent } from './components/report-listing-tile/report-listing-tile.component';
-import { UserInfoTileComponent } from './components/user-info-tile/user-info-tile.component';
-import { CoreModule } from 'src/app/core/core.module';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ImageData } from '@shared/components/image-div/image-div.component';
+import { Listing } from '@shared/models/listing/listing.model';
+import { LocationFilter } from '@shared/models/location-filter/location-filter.model';
+import { Location } from '@shared/models/location/location.model';
+import { SharedModule } from '@shared/shared.module';
+import { UseValueProvider } from '@testing/helpers';
+import { of } from 'rxjs';
+import { CoreModule } from 'src/app/core/core.module';
+import { ListingService } from 'src/app/core/services/business/listing/listing.service';
+import { LocationService } from 'src/app/core/services/business/location/location.service';
+import { SwiperModule } from 'swiper/angular';
 import { IWantItButtonComponent } from './components/i-want-it-button/i-want-it-button.component';
-import { PhotoCarouselComponent } from './components/photo-carousel/photo-carousel.component';
 import { ListingDetailLoadingStateComponent } from './components/listing-detail-loading-state/listing-detail-loading-state.component';
 import { ListingLocationComponent } from './components/listing-location/listing-location.component';
+import { NotMailableAlertComponent } from './components/not-mailable-alert/not-mailable-alert.component';
+import { PhotoCarouselComponent } from './components/photo-carousel/photo-carousel.component';
+import { ReportListingTileComponent } from './components/report-listing-tile/report-listing-tile.component';
+import { ListingDetailComponent } from './listing-detail.component';
 
 describe('ListingDetailComponent', () => {
   let component: ListingDetailComponent;
@@ -64,10 +64,9 @@ describe('ListingDetailComponent', () => {
         PhotoCarouselComponent,
         NotMailableAlertComponent,
         ReportListingTileComponent,
-        UserInfoTileComponent,
         IWantItButtonComponent,
       ],
-      imports: [CoreModule, SharedModule, SwiperModule],
+      imports: [CoreModule, RouterTestingModule, SharedModule, SwiperModule],
       providers: [
         activatedRouteProvider,
         listingServiceProdiver,

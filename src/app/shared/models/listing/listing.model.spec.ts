@@ -1,3 +1,4 @@
+import { ImageData } from '@shared/components/image-div/image-div.component';
 import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from './listing.model';
@@ -98,5 +99,30 @@ describe('Listing model', () => {
 
     // Assert / Then
     expect(items.length).toBe(numberOfItems);
+  });
+
+  describe('#toImageData', () => {
+    it('should map a listing to an image data object', () => {
+      const listing = Listing.example();
+      expect(listing.toImageData()).toEqual({
+        imageUrl: listing.featuredImage?.url,
+        imageAlt: listing.title,
+        link: '/listing/' + listing.id,
+      });
+    });
+  });
+
+  describe('#listToImageDataList', () => {
+    it('should map a listing list to an image data list', () => {
+      const listings = Listing.exampleList();
+
+      expect(Listing.listToImageDataList(listings)).toEqual(
+        jasmine.arrayContaining<ImageData>([listings[0].toImageData()])
+      );
+    });
+
+    it('should return an empty array if listings list is falsy', () => {
+      expect(Listing.listToImageDataList(undefined)).toEqual([]);
+    });
   });
 });

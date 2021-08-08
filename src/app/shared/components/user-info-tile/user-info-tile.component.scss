@@ -1,7 +1,7 @@
 .user-avatar-container {
   position: relative;
-  width: var(--listing-detail-avatar-size, --app-default-avatar-size);
-  height: var(--listing-detail-avatar-size, --app-default-avatar-size);
+  width: var(--app-user-info-tile-avatar-size, var(--app-default-avatar-size));
+  height: var(--app-user-info-tile-avatar-size, var(--app-default-avatar-size));
   margin-right: 2rem;
 
   .user-avatar,
@@ -19,6 +19,9 @@
   }
 
   .material-icons {
-    font-size: var(--listing-detail-avatar-size, --app-default-avatar-size);
+    font-size: var(
+      --app-user-info-tile-avatar-size,
+      var(--app-default-avatar-size)
+    );
   }
 }

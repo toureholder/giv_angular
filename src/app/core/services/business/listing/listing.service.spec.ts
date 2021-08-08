@@ -30,10 +30,20 @@ describe('ListingService', () => {
   });
 
   describe('#getOne', () => {
+    it('should call api', () => {
+      // Given
+      const id = 1;
+
+      // When
+      service.getOne(id);
+
+      // Then
+      expect(mockApi.getOne).toHaveBeenCalledWith(id);
+    });
+
     it('should return listing observable from api', () => {
       // Given
-      const apiResponse = getCategoriesJson[0].listings[0];
-      const listing = Listing.fromJson(apiResponse);
+      const listing = Listing.example();
       mockApi.getOne.and.returnValue(of(listing));
 
       // When
@@ -41,9 +51,6 @@ describe('ListingService', () => {
         // Then
         expect(data).toEqual(listing);
       });
-
-      // Then
-      expect(mockApi.getOne).toHaveBeenCalledWith(listing.id);
     });
   });
 });

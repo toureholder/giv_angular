@@ -1,13 +1,20 @@
+<app-user-info-tile-loading-state
+  *ngIf="!user"
+></app-user-info-tile-loading-state>
+
 <app-list-tile
+  [isClickable]="isClickable"
   [title]="user?.name"
   [subtitle]="
     ('shared_member_since_' | translate) +
     (user?.createdAt | date: 'MMMM y':'':translateService.currentLang)
   "
+  *ngIf="user"
 >
   <div leading class="user-avatar-container">
     <span class="user-avatar-placeholder material-icons"> face </span>
     <div
+      *ngIf="this.user?.imageUrl"
       class="user-avatar"
       [ngStyle]="{ 'background-image': 'url(\'' + this.user?.imageUrl + '\')' }"
     ></div>

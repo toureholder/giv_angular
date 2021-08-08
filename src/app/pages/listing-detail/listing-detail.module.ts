@@ -7,7 +7,6 @@ import { SwiperModule } from 'swiper/angular';
 import { SharedModule } from '@shared/shared.module';
 import { NotMailableAlertComponent } from './components/not-mailable-alert/not-mailable-alert.component';
 import { ReportListingTileComponent } from './components/report-listing-tile/report-listing-tile.component';
-import { UserInfoTileComponent } from './components/user-info-tile/user-info-tile.component';
 import { IWantItButtonComponent } from './components/i-want-it-button/i-want-it-button.component';
 import { ContactOwnerModalComponent } from './components/contact-owner-modal/contact-owner-modal.component';
 import { PhotoCarouselComponent } from './components/photo-carousel/photo-carousel.component';
@@ -19,7 +18,6 @@ import { ListingLocationComponent } from './components/listing-location/listing-
     ListingDetailComponent,
     NotMailableAlertComponent,
     ReportListingTileComponent,
-    UserInfoTileComponent,
     IWantItButtonComponent,
     ContactOwnerModalComponent,
     PhotoCarouselComponent,

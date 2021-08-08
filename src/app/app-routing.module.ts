@@ -20,6 +20,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'user/:id',
+    loadChildren: () =>
+      import('./pages/user-detail/user-detail.module').then(
+        (m) => m.UserDetailModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

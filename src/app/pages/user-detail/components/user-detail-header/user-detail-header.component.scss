@@ -1,0 +1,9 @@
+app-user-info-tile {
+  --app-user-info-tile-avatar-size: 80px;
+  --app-list-tile-title-font-size: 24px;
+  --app-list-tile-title-margin-bottom: 8px;
+}
+
+p {
+  margin: var(--app-default-spacing) 0 calc(var(--app-default-spacing) * 2);
+}

@@ -12,6 +12,16 @@
     p {
       margin: 0;
     }
+
+    .mat-body-strong {
+      font-size: var(--app-list-tile-title-font-size, 14px);
+      margin-bottom: var(--app-list-tile-title-margin-bottom, 0);
+    }
+
+    .mat-caption {
+      color: var(--app-gray);
+      font-size: var(--app-list-tile-subtitle-font-size, 12px);
+    }
   }
 
   &.clickable:hover {

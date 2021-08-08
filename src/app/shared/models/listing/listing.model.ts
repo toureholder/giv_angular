@@ -1,3 +1,4 @@
+import { ImageData } from '@shared/components/image-div/image-div.component';
 import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { ListingImage } from '../listing-image/listing-image.model';
 import { User } from '../user/user.model';
@@ -89,6 +90,14 @@ export class Listing implements IListing {
       : this.sortByPostion(this.listingImages)[0];
   }
 
+  public toImageData(): ImageData {
+    return {
+      imageUrl: this.featuredImage?.url,
+      imageAlt: this.title,
+      link: '/listing/' + this.id,
+    };
+  }
+
   static fromJsonListtoList(json: any[]): Listing[] {
     return json.map((obj) => Listing.fromJson(obj));
   }
@@ -118,6 +127,12 @@ export class Listing implements IListing {
     const copy = JSON.parse(JSON.stringify(exampleJson));
     copy['is_mailable'] = options?.isMailable;
     return Listing.fromJson(copy);
+  }
+
+  static exampleList(): Listing[] {
+    const exampleJson = getCategoriesJson[0].listings;
+    const copy = JSON.parse(JSON.stringify(exampleJson));
+    return Listing.fromJsonListtoList(copy);
   }
 
   static getOneFake({
@@ -162,6 +177,10 @@ export class Listing implements IListing {
     }
 
     return list;
+  }
+
+  static listToImageDataList(listings?: Listing[]): ImageData[] {
+    return listings?.map((listing: Listing) => listing.toImageData()) || [];
   }
 
   private sortByPostion(images: ListingImage[]): ListingImage[] {

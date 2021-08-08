@@ -1,23 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { User } from '@shared/models/user/user.model';
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
 
-import { UserInfoTileComponent } from './user-info-tile.component';
+import { UserDetailHeaderComponent } from './user-detail-header.component';
 
-describe('UserInfoTileComponent', () => {
-  let component: UserInfoTileComponent;
-  let fixture: ComponentFixture<UserInfoTileComponent>;
+describe('UserDetailHeaderComponent', () => {
+  let component: UserDetailHeaderComponent;
+  let fixture: ComponentFixture<UserDetailHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UserInfoTileComponent],
+      declarations: [UserDetailHeaderComponent],
       imports: [CoreModule, SharedModule],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserInfoTileComponent);
+    fixture = TestBed.createComponent(UserDetailHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,48 @@
+@import '../../../../styles/breakpoints.scss';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: calc(var(--app-default-spacing) * 2);
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+
+  .image-div-container {
+    background-color: var(--app-lighter-gray);
+    border-radius: var(--app-default-border-radius);
+    overflow: hidden;
+    height: 132px;
+  }
+
+  p {
+    margin-top: var(--app-default-spacing);
+    color: var(--app-gray);
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-item {
+    .image-div-container {
+      height: 180px;
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-item {
+    .image-div-container {
+      height: 216px;
+    }
+  }
+}

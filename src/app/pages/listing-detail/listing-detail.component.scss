@@ -3,7 +3,7 @@
 :host {
   --app-list-tile-horizontal-padding: 2.4rem;
   --app-image-div-height: 300px;
-  --listing-detail-avatar-size: 36px;
+  --app-user-info-tile-avatar-size: 36px;
 }
 
 label {
@@ -24,7 +24,7 @@ label {
   :host {
     --app-list-tile-horizontal-padding: 2.4rem;
     --app-image-div-height: 550px;
-    --listing-detail-avatar-size: 36px;
+    --app-user-info-tile-avatar-size: 36px;
   }
 
   .box {

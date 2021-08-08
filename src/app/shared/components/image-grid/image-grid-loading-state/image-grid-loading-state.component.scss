@@ -1,0 +1,35 @@
+@import '../../../../../styles/breakpoints.scss';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: calc(var(--app-default-spacing) * 2);
+
+  div {
+    background-color: var(--app-lighter-gray);
+    border-radius: var(--app-default-border-radius);
+    overflow: hidden;
+    height: 132px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    div {
+      height: 180px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+
+    div {
+      height: 216px;
+    }
+  }
+}

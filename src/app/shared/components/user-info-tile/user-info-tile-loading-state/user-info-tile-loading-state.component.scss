@@ -1,0 +1,30 @@
+.container {
+  padding: var(--app-list-tile-vertical-padding, 2rem)
+    var(--app-list-tile-horizontal-padding, 0);
+  display: flex;
+  align-items: center;
+}
+
+[class$='skeleton'] {
+  background-color: var(--app-lighter-gray);
+}
+
+.avatar-skeleton {
+  width: var(--app-user-info-tile-avatar-size, var(--app-default-avatar-size));
+  height: var(--app-user-info-tile-avatar-size, var(--app-default-avatar-size));
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.title-skeleton {
+  width: 200px;
+  height: 2.4rem;
+  margin-bottom: 0.8rem;
+  border-radius: var(--app-default-border-radius);
+}
+
+.subtitle-skeleton {
+  width: 200px;
+  height: 2rem;
+  border-radius: var(--app-default-border-radius);
+}

@@ -41,7 +41,12 @@
           <p id="description">{{ listing?.description }}</p>
         </div>
 
-        <app-user-info-tile [user]="listing?.user"></app-user-info-tile>
+        <a [routerLink]="'/user/' + listing?.user?.id">
+          <app-user-info-tile
+            [user]="listing?.user"
+            [isClickable]="true"
+          ></app-user-info-tile>
+        </a>
 
         <div class="app-vertical-divider"></div>
 
