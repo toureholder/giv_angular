@@ -7,16 +7,4 @@ h2 {
 
 .app-page-wrapper {
   padding-top: calc(var(--app-default-spacing) * 6);
-  padding-bottom: calc(var(--app-default-spacing) * 6);
-}
-
-.app-vertical-divider {
-  display: none;
-}
-
-@media screen and (min-width: $desktop) {
-  .app-vertical-divider {
-    display: block;
-    margin: calc(var(--app-default-spacing) * 4.1) 0;
-  }
 }

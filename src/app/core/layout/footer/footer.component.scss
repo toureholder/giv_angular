@@ -1,0 +1,33 @@
+@import '../../../../styles/breakpoints.scss';
+
+footer {
+  margin-top: calc(var(--app-default-spacing) * 4);
+
+  .app-vertical-divider {
+    margin-bottom: calc(var(--app-default-spacing) * 2);
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.footer-links {
+  margin-bottom: calc(var(--app-default-spacing) * 2);
+  font-weight: bold;
+}
+
+.footer-link-divider {
+  margin-left: var(--app-default-spacing);
+  margin-right: var(--app-default-spacing);
+}
+
+@media screen and (min-width: $tablet) {
+  .app-vertical-divider {
+    margin-bottom: calc(var(--app-default-spacing) * 4);
+  }
+}

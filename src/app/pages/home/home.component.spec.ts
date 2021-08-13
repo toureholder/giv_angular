@@ -10,10 +10,6 @@ import { HomeCategorySectionComponent } from './components/home-category-section
 import { HomeLoadingStateComponent } from './components/home-loading-state/home-loading-state.component';
 import { LandingPageFeaturesComponent } from './components/landing-page/landing-page-features/landing-page-features.component';
 import { LandingPageHeroComponent } from './components/landing-page/landing-page-hero/landing-page-hero.component';
-import {
-  StoreLinksComponent,
-  StoreLinksData,
-} from '../../shared/components/store-links/store-links.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { RandomProductGridModule } from './components/random-product-grid/random-product-grid.module';
 import { HomeComponent } from './home.component';
@@ -21,7 +17,6 @@ import { HomeService } from './services/home.service';
 import { DownloadAppCtaComponent } from '@shared/components/download-app-cta/download-app-cta.component';
 import { EnvironmentService } from 'src/app/core/services/environment/environment.service';
 import { UseValueProvider } from '@testing/helpers';
-import { StoreLinksService } from 'src/app/core/services/business/store-links/store-links.service';
 
 describe('HomeComponent', () => {
   let fixture: ComponentFixture<HomeComponent>;
@@ -31,18 +26,7 @@ describe('HomeComponent', () => {
   let fakeList: ListingCategory[];
   let mockEnvironment: EnvironmentService;
 
-  let mockStoreLinksService: jasmine.SpyObj<StoreLinksService>;
-
   beforeEach(async () => {
-    mockStoreLinksService = jasmine.createSpyObj('StoreLinksService', [
-      'getStoreLinks',
-    ]);
-
-    const storeLinksProvider: UseValueProvider = {
-      provide: StoreLinksService,
-      useValue: mockStoreLinksService,
-    };
-
     homeServiceSpy = jasmine.createSpyObj('HomeService', ['getCategories']);
 
     fakeList = [
@@ -81,10 +65,9 @@ describe('HomeComponent', () => {
         LandingPageComponent,
         LandingPageHeroComponent,
         LandingPageFeaturesComponent,
-        StoreLinksComponent,
         DownloadAppCtaComponent,
       ],
-      providers: [HomeService, environmentProvider, storeLinksProvider],
+      providers: [HomeService, environmentProvider],
     });
 
     TestBed.overrideProvider(HomeService, { useValue: homeServiceSpy });
@@ -94,31 +77,6 @@ describe('HomeComponent', () => {
     template = fixture.nativeElement;
 
     homeServiceSpy.getCategories.and.returnValue(of(fakeList));
-  });
-
-  describe('#ngOnInit', () => {
-    it('should set storeLinksData with mobileStoreLink for iOS', () => {
-      // Given
-      const fakeLinks: StoreLinksData = {
-        mobileStoreLink: 'https://example.com',
-        playStoreLink: 'https://android.com',
-        appStoreLink: 'https://ios.com',
-      };
-
-      mockStoreLinksService.getStoreLinks.and.returnValue(fakeLinks);
-
-      // When
-      component.ngOnInit();
-
-      // Then
-      expect(component.storeLinksData).toEqual(
-        jasmine.objectContaining<StoreLinksData>({
-          mobileStoreLink: fakeLinks?.mobileStoreLink,
-          playStoreLink: fakeLinks?.playStoreLink,
-          appStoreLink: fakeLinks?.appStoreLink,
-        })
-      );
-    });
   });
 
   it('getCategoriesRequest should start in READY state', () => {

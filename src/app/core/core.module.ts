@@ -7,9 +7,12 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CustomTranslateLoader } from './i18n/custom_translate_loader';
 import { MainComponent } from './layout/main/main.component';
 import { NavModule } from './layout/nav/nav.module';
+import { FooterComponent } from './layout/footer/footer.component';
+import { DownloadAppCtaModule } from '@shared/components/download-app-cta/download-app-cta.module';
+import { TermsLinksModule } from '@shared/components/terms-links/terms-links.module';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, FooterComponent],
   imports: [
     // vendor
     BrowserModule,
@@ -25,6 +28,8 @@ import { NavModule } from './layout/nav/nav.module';
 
     // app
     NavModule,
+    DownloadAppCtaModule,
+    TermsLinksModule,
   ],
   exports: [
     // modules

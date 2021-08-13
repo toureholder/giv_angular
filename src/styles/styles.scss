@@ -13,14 +13,6 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-a,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
-  color: inherit;
-}
-
 :root {
   font-size: 62.5%;
 }
@@ -31,7 +23,6 @@ a:active {
   margin-right: auto;
   max-width: 1224px;
   padding: 2.4rem;
-  height: 100%;
 }
 
 .app-content-padding {

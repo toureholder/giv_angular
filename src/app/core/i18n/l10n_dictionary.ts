@@ -12,6 +12,10 @@ export const dictionary: L10nDictionary = {
     en: 'Description',
     pt: 'Descrição',
   },
+  common_all_rights_reserved: {
+    en: 'All rights reserved',
+    pt: 'Todos os direitos reservados',
+  },
   download_app_cta_text: {
     en: 'Baixe o app para ver todos os anúncios e para criar os seus.',
     pt: 'Baixe o app para ver todos os anúncios e para criar os seus.',
