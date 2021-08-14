@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "givapp-938de"
+  },
+  "targets": {
+    "givapp-938de": {
+      "hosting": {
+        "staging": [
+          "giv-web-app-staging"
+        ],
+        "production": [
+          "giv-web-app-staging"
+        ]
+      }
+    }
+  }
+}
