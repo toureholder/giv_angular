@@ -29,6 +29,10 @@ body {
   padding: var(--app-default-padding);
 }
 
+.app-content-vertical-padding {
+  padding: var(--app-default-padding) 0;
+}
+
 .app-vertical-divider {
   width: 100%;
   height: 1px;

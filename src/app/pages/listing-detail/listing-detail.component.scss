@@ -25,6 +25,10 @@ label {
   padding: 0;
 }
 
+.info-container {
+  padding: var(--app-default-padding);
+}
+
 @media only screen and (min-width: $tablet) {
 }
 
@@ -50,7 +54,12 @@ label {
 
   .carousel-container {
     border-radius: var(--app-default-border-radius);
-    margin: 2.4rem 2.4rem 0;
+    margin: 2.4rem 2.4rem 0 0;
     overflow: hidden;
+  }
+
+  .info-container {
+    padding: var(--app-default-padding) 0 var(--app-default-padding)
+      var(--app-default-padding);
   }
 }

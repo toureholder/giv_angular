@@ -8,9 +8,8 @@ describe('UserInfoTileLoadingStateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserInfoTileLoadingStateComponent ]
-    })
-    .compileComponents();
+      declarations: [UserInfoTileLoadingStateComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
