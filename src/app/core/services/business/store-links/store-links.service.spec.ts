@@ -56,9 +56,9 @@ describe('StoreLinksService', () => {
       // Then
       expect(service.getStoreLinks()).toEqual(
         jasmine.objectContaining<StoreLinksData>({
-          mobileStoreLink: mockEnvironment.storeLinks?.Android,
-          playStoreLink: mockEnvironment.storeLinks?.Android,
-          appStoreLink: mockEnvironment.storeLinks?.iOS,
+          mobileStoreLink: mockEnvironment.storeLinks.Android,
+          playStoreLink: mockEnvironment.storeLinks.Android,
+          appStoreLink: mockEnvironment.storeLinks.iOS,
         })
       );
     });

@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
         this.categories = categories;
         this.getCategoriesRequest.state = AsyncActionState.SUCCESS;
       },
-      (error) => {
+      () => {
         this.getCategoriesRequest.state = AsyncActionState.ERROR;
       }
     );

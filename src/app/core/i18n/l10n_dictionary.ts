@@ -8,7 +8,7 @@ export interface L10nDictionary {
 }
 
 export const dictionary: L10nDictionary = {
-  comon_description: {
+  common_description: {
     en: 'Description',
     pt: 'Descrição',
   },

@@ -17,6 +17,10 @@ describe('HttpService', () => {
       production: false,
       baseApiUrl: 'https://example.com',
       customerServiceNumber: '1234567890',
+      storeLinks: {
+        Android: 'https://play.google.com/store/apps/example',
+        iOS: 'https://apps.apple.com/us/app/example/id1234567899?',
+      },
     };
 
     const httpProvider: UseValueProvider = {

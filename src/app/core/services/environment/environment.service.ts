@@ -9,7 +9,7 @@ export class EnvironmentService {
   production: boolean = environment.production;
   baseApiUrl: string = environment.baseApiUrl;
   customerServiceNumber: string = environment.customerServiceNumber;
-  storeLinks?: { [key in keyof typeof OS]: string } = {
+  storeLinks: { [key in keyof typeof OS]: string } = {
     Android: environment.storeLinks.android,
     iOS: environment.storeLinks.iOS,
   };

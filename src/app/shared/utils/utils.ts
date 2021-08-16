@@ -4,7 +4,7 @@ export const isAbsoulteUri = (path: string): boolean => {
 };
 
 export const isFalsyOrEmpty = (s: string | undefined | null): boolean => {
-  return !s || s?.trim() == '';
+  return !s || s.trim() == '';
 };
 
 export const pickDefined = (obj: any): any => {

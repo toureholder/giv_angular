@@ -4,7 +4,7 @@ import { ImageDivComponent } from '@shared/components/image-div/image-div.compon
 import { AsyncActionState } from '@shared/models/component_async_action/component_async_action';
 import { ListingCategory } from '@shared/models/listing-category/listing-category.model';
 import { SharedModule } from '@shared/shared.module';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { CoreModule } from 'src/app/core/core.module';
 import { HomeCategorySectionComponent } from './components/home-category-section/home-category-section.component';
 import { HomeLoadingStateComponent } from './components/home-loading-state/home-loading-state.component';
@@ -75,71 +75,91 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     template = fixture.nativeElement;
-
-    homeServiceSpy.getCategories.and.returnValue(of(fakeList));
   });
 
-  it('getCategoriesRequest should start in READY state', () => {
-    expect(component.getCategoriesRequest.isReady).toBe(true);
+  describe('when HomeService.getCategories returns a list of categories', () => {
+    beforeEach(() => {
+      homeServiceSpy.getCategories.and.returnValue(of(fakeList));
+    });
+
+    it('getCategoriesRequest should start in READY state', () => {
+      expect(component.getCategoriesRequest.isReady).toBe(true);
+    });
+
+    it('getCategoriesRequest should be in LOADING state during request', () => {
+      // Act / When
+      fixture.detectChanges();
+      component.getCategoriesRequest.state = AsyncActionState.LOADING;
+
+      // Assert / Then
+      expect(component.getCategoriesRequest.isLoading).toBe(true);
+    });
+
+    it('getCategoriesRequest should be in SUCCESS state after request', () => {
+      fixture.detectChanges();
+
+      expect(component.getCategoriesRequest.isSuccess).toBe(true);
+    });
+
+    it('should get categories from service', () => {
+      fixture.detectChanges();
+
+      expect(homeServiceSpy.getCategories).toHaveBeenCalledTimes(1);
+      expect(component.categories).toEqual(fakeList);
+    });
+
+    it('should render loading state while loading', () => {
+      // Act / When
+      fixture.detectChanges();
+      component.getCategoriesRequest.state = AsyncActionState.LOADING;
+      fixture.detectChanges();
+
+      // Assert / Then
+      expect(
+        template.querySelector('[data-test="loading-state"]')
+      ).toBeTruthy();
+    });
+
+    it('should not render loading when service call completes', () => {
+      // Act / When
+      fixture.detectChanges();
+
+      // Assert / Then
+      expect(template.querySelector('[data-test="loading-state"]')).toBeFalsy();
+    });
+
+    it('should render list of categories when service call completes', () => {
+      fixture.detectChanges();
+
+      expect(
+        template.querySelector('[data-test="success-state"]')
+      ).toBeTruthy();
+
+      expect(
+        template.querySelectorAll('[data-test="home-category"]').length
+      ).toBe(fakeList.length);
+    });
+
+    it('first category should have a template option of "1"', () => {
+      fixture.detectChanges();
+
+      expect(
+        template
+          .querySelectorAll('[data-test="home-category"]')[0]
+          .getAttribute('ng-reflect-template-option')
+      ).toBe('1');
+    });
   });
 
-  it('getCategoriesRequest should be in LOADING state during request', () => {
-    // Act / When
-    fixture.detectChanges();
-    component.getCategoriesRequest.state = AsyncActionState.LOADING;
+  describe('when HomeService.getCategories throws an error', () => {
+    beforeEach(() => {
+      homeServiceSpy.getCategories.and.returnValue(throwError('fake error'));
+    });
 
-    // Assert / Then
-    expect(component.getCategoriesRequest.isLoading).toBe(true);
-  });
+    it('should be in error state', () => {
+      fixture.detectChanges();
 
-  it('getCategoriesRequest should be in SUCCESS state after request', () => {
-    fixture.detectChanges();
-
-    expect(component.getCategoriesRequest.isSuccess).toBe(true);
-  });
-
-  it('should get categories from service', () => {
-    fixture.detectChanges();
-
-    expect(homeServiceSpy.getCategories).toHaveBeenCalledTimes(1);
-    expect(component.categories).toEqual(fakeList);
-  });
-
-  it('should render loading state while loading', () => {
-    // Act / When
-    fixture.detectChanges();
-    component.getCategoriesRequest.state = AsyncActionState.LOADING;
-    fixture.detectChanges();
-
-    // Assert / Then
-    expect(template.querySelector('[data-test="loading-state"]')).toBeTruthy();
-  });
-
-  it('should not render loading when service call completes', () => {
-    // Act / When
-    fixture.detectChanges();
-
-    // Assert / Then
-    expect(template.querySelector('[data-test="loading-state"]')).toBeFalsy();
-  });
-
-  it('should render list of categories when service call completes', () => {
-    fixture.detectChanges();
-
-    expect(template.querySelector('[data-test="success-state"]')).toBeTruthy();
-
-    expect(
-      template.querySelectorAll('[data-test="home-category"]').length
-    ).toBe(fakeList.length);
-  });
-
-  it('first category should have a template option of "1"', () => {
-    fixture.detectChanges();
-
-    expect(
-      template
-        .querySelectorAll('[data-test="home-category"]')[0]
-        .getAttribute('ng-reflect-template-option')
-    ).toBe('1');
+      expect(component.getCategoriesRequest.isError).toBeTrue();
+    });
   });
 });

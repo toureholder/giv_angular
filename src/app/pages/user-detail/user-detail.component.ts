@@ -27,8 +27,8 @@ export class UserDetailComponent implements OnInit {
     this.getUserId().subscribe((id) => {
       this.userService.getListingsByUserId(id)?.subscribe((val: Listing[]) => {
         this.listings = val;
-        this.user = this.listings?.[0].user;
-        this.defineGridItems(this.listings);
+        this.user = val[0].user;
+        this.defineGridItems(val);
       });
     });
   }

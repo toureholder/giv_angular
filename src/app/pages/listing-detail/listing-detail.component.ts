@@ -66,7 +66,7 @@ export class ListingDetailComponent implements OnInit {
   }
 
   private prepareImageData(listing: Listing): void {
-    this.imageDataList = listing?.listingImages?.map((image) => {
+    this.imageDataList = listing.listingImages.map((image) => {
       return {
         imageUrl: image.url,
       };

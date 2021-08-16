@@ -19,6 +19,18 @@ describe('ImageDivComponent', () => {
     template = fixture.nativeElement;
   });
 
+  describe('when image data is undefined', () => {
+    describe('#hasAbsoluteLink', () => {
+      it('should be false', () => {
+        // When
+        fixture.detectChanges();
+
+        // Then
+        expect(component.hasAbsoluteLink).toBeFalse();
+      });
+    });
+  });
+
   describe('when link is relative link', () => {
     beforeEach(() => {
       // Given

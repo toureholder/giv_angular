@@ -37,7 +37,7 @@ describe('IWantItButtonComponent', () => {
   });
 
   describe('#onClick', () => {
-    it('should open dialog', () => {
+    it('should open dialog when phone number and listing title are defined', () => {
       // Given
       component.listingTitle = 'Something nice';
       component.phoneNumber = '1234567890';
@@ -52,6 +52,28 @@ describe('IWantItButtonComponent', () => {
           phoneNumber: component.phoneNumber,
         },
       });
+    });
+
+    it('should NOT open dialog when phone number is undefined', () => {
+      // Given
+      component.listingTitle = 'Something nice';
+
+      // When
+      component.onClick();
+
+      // Then
+      expect(mockModal.open).not.toHaveBeenCalled();
+    });
+
+    it('should NOT open dialog when listing title is undefined', () => {
+      // Given
+      component.phoneNumber = '1234567890';
+
+      // When
+      component.onClick();
+
+      // Then
+      expect(mockModal.open).not.toHaveBeenCalled();
     });
   });
 

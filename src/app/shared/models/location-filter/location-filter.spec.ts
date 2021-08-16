@@ -45,6 +45,8 @@ describe('LocationFilter', () => {
   });
 
   it('should have a static method to generate a fake instance', () => {
-    expect(LocationFilter.fake()).toBeInstanceOf(LocationFilter);
+    const fake = LocationFilter.fake();
+    expect(fake).toBeInstanceOf(LocationFilter);
+    expect(fake.isHardFilter).toBeTrue();
   });
 });

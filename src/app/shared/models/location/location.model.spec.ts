@@ -4,7 +4,7 @@ import { Location } from './location.model';
 
 describe('Location model', () => {
   describe('#fromJson', () => {
-    it('should have a static method to deserialize a json object', () => {
+    it('should deserialize a json object', () => {
       // Arrange / Given
       const json = getLocationDetailsJson;
 
@@ -37,10 +37,7 @@ describe('Location model', () => {
     it('should be able to deserialize json objects with null location parts', () => {
       // Arrange / Given
       const json = {
-        country: {
-          id: '3469034',
-          name: 'Brasil',
-        },
+        country: null,
         state: null,
         city: null,
       };
@@ -49,15 +46,8 @@ describe('Location model', () => {
       const deserialized = Location.fromJson(json);
 
       // Assert / Then
-      expect(deserialized.country).toEqual(
-        jasmine.objectContaining({
-          id: json.country.id,
-          name: json.country.name,
-        })
-      );
-
+      expect(deserialized.country).toBeUndefined();
       expect(deserialized.state).toBeUndefined();
-
       expect(deserialized.city).toBeUndefined();
     });
   });

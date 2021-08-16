@@ -90,6 +90,16 @@ describe('RandomProductGridComponent', () => {
     expect(component.computedTemplateOption).toBe('3');
     expect(template.querySelector('[data-template="3"]')).toBeTruthy();
   });
+
+  describe('#slicedImageList', () => {
+    describe('when featuredImages is undefined', () => {
+      it('should be an empty array', () => {
+        fixture.detectChanges();
+
+        expect(component.slicedImageList).toEqual([]);
+      });
+    });
+  });
 });
 
 // Helpers

@@ -4,15 +4,25 @@ import { ListingImage } from '../listing-image/listing-image.model';
 import { Listing } from './listing.model';
 
 describe('Listing model', () => {
-  it('featuredImage should be image with lowest position', () => {
-    // Arrange / Given
-    const model = Listing.getOneFake({});
+  describe('#featuredImage', () => {
+    it('should be image with lowest position', () => {
+      // Arrange / Given
+      const model = Listing.getOneFake({});
 
-    // Act / When
-    const featuredImage = model.featuredImage;
+      // Act / When
+      const featuredImage = model.featuredImage;
 
-    // Assert / Then
-    expect(featuredImage?.position).toBe(0);
+      // Assert / Then
+      expect(featuredImage?.position).toBe(0);
+    });
+
+    it('should be undefined when there are no images', () => {
+      // Arrange / Given
+      const model = Listing.getOneFake({ listingImages: [] });
+
+      // Assert / Then
+      expect(model.featuredImage).toBeUndefined();
+    });
   });
 
   it('should order its images by position when constructed', () => {
@@ -34,28 +44,56 @@ describe('Listing model', () => {
     expect(newListing.listingImages[3].position).toEqual(3);
   });
 
-  it('should have a static method to deserialize a json object', () => {
-    // Arrange / Given
-    const json = getCategoriesJson[0].listings[0];
-    const firstListingImageJson = json.listing_images[0];
+  describe('#fromJson', () => {
+    it('should deserialize a json object', () => {
+      // Arrange / Given
+      const json = getCategoriesJson[0].listings[0];
+      const firstListingImageJson = json.listing_images[0];
 
-    // Act / When
-    const deserialized = Listing.fromJson(json);
+      // Act / When
+      const deserialized = Listing.fromJson(json);
 
-    // Assert / Then
-    expect(deserialized).toEqual(
-      jasmine.objectContaining({
-        id: json.id,
-        title: json.title,
-        description: json.description,
-        listingImages: jasmine.arrayContaining([
+      // Assert / Then
+      expect(deserialized).toEqual(
+        jasmine.objectContaining({
+          id: json.id,
+          title: json.title,
+          description: json.description,
+          listingImages: jasmine.arrayContaining([
+            jasmine.objectContaining({
+              url: firstListingImageJson.url,
+              position: firstListingImageJson.position,
+            }),
+          ]),
+        })
+      );
+    });
+
+    describe('when geonames location is undefined', () => {
+      it('countryId, stateId and cityId should be undefined', () => {
+        // Arrange / Given
+        const json = getCategoriesJson[0].listings[0];
+        const copy = JSON.parse(JSON.stringify(json));
+        copy.geonames_country_id = undefined;
+        copy.geonames_state_id = undefined;
+        copy.geonames_city_id = undefined;
+
+        // Act / When
+        const deserialized = Listing.fromJson(copy);
+
+        // Assert / Then
+        expect(deserialized).toEqual(
           jasmine.objectContaining({
-            url: firstListingImageJson.url,
-            position: firstListingImageJson.position,
-          }),
-        ]),
-      })
-    );
+            id: json.id,
+            title: json.title,
+            description: json.description,
+            countryId: undefined,
+            stateId: undefined,
+            cityId: undefined,
+          })
+        );
+      });
+    });
   });
 
   it('should have a static method to deserialize a list of json objects', () => {
@@ -90,15 +128,25 @@ describe('Listing model', () => {
     expect(Listing.example()).toBeInstanceOf(Listing);
   });
 
-  it('shoukd have a static method to generate a fake list with n items', () => {
-    // Arrange / Given
-    const numberOfItems = 10;
+  describe('#getFakeList', () => {
+    it('should generate a fake list with n items', () => {
+      // Arrange / Given
+      const numberOfItems = 10;
 
-    // Act / When
-    const items: Listing[] = Listing.getFakeList(numberOfItems);
+      // Act / When
+      const items: Listing[] = Listing.getFakeList(numberOfItems);
 
-    // Assert / Then
-    expect(items.length).toBe(numberOfItems);
+      // Assert / Then
+      expect(items.length).toBe(numberOfItems);
+    });
+
+    it('should generate a fake list with one item if number of items is not defined', () => {
+      // Act / When
+      const items: Listing[] = Listing.getFakeList();
+
+      // Assert / Then
+      expect(items.length).toBe(1);
+    });
   });
 
   describe('#toImageData', () => {
@@ -108,6 +156,19 @@ describe('Listing model', () => {
         imageUrl: listing.featuredImage?.url,
         imageAlt: listing.title,
         link: '/listing/' + listing.id,
+      });
+    });
+
+    describe('#imageUrl', () => {
+      it('should be undefined if featured image is undefined', () => {
+        // Given
+        const model = Listing.getOneFake({ listingImages: [] });
+
+        // When
+        const imageData = model.toImageData();
+
+        // Then
+        expect(imageData.imageUrl).toBeUndefined();
       });
     });
   });

@@ -16,9 +16,9 @@ export class StoreLinksService {
     const os = this.osDetection.getMobileOS();
 
     return {
-      mobileStoreLink: this.environment.storeLinks?.[os],
-      playStoreLink: this.environment.storeLinks?.Android,
-      appStoreLink: this.environment.storeLinks?.iOS,
+      mobileStoreLink: this.environment.storeLinks[os],
+      playStoreLink: this.environment.storeLinks.Android,
+      appStoreLink: this.environment.storeLinks.iOS,
     };
   }
 }

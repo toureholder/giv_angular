@@ -41,4 +41,12 @@ describe('HomeCategorySectionComponent', () => {
     // Assert / Then
     expect(template.querySelectorAll('app-random-product-grid').length).toBe(1);
   });
+
+  describe('#imageList', () => {
+    it('should be an empty list when category is undefined', () => {
+      fixture.detectChanges();
+
+      expect(component.imageList).toEqual([]);
+    });
+  });
 });
