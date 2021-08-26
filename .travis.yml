@@ -1,0 +1,37 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - '14'
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - ./node_modules
+
+if: branch = main OR branch =~ ^release
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm run test:ci
+  - npm run build
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: 'bash ./scripts/deploy_production.sh'
+    on:
+      branch: main
+  - provider: script
+    skip_cleanup: true
+    script: 'bash ./scripts/deploy_staging.sh'
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^release

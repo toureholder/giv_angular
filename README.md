@@ -1,3 +1,6 @@
+[![Build Status](https://app.travis-ci.com/toureholder/giv_angular.svg?branch=main)](https://app.travis-ci.com/toureholder/giv_angular)
+[![codecov](https://codecov.io/gh/toureholder/giv_angular/branch/main/graph/badge.svg?token=PAPHVVFP2D)](https://codecov.io/gh/toureholder/giv_angular)
+
 # GivAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
