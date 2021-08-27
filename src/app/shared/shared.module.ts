@@ -10,6 +10,7 @@ import { StoreLinksModule } from './components/store-links/store-links.module';
 import { DownloadAppCtaModule } from './components/download-app-cta/download-app-cta.module';
 import { UserInfoTileModule } from './components/user-info-tile/user-info-tile.module';
 import { ImageGridModule } from './components/image-grid/image-grid.module';
+import { LoadingSpinnerModule } from './components/loading-spinner/loading-spinner.module';
 
 @NgModule({
   declarations: [],
@@ -22,6 +23,7 @@ import { ImageGridModule } from './components/image-grid/image-grid.module';
     StoreLinksModule,
     TermsLinksModule,
     UserInfoTileModule,
+    LoadingSpinnerModule,
     MatButtonModule,
     MatBottomSheetModule,
   ],
@@ -34,6 +36,7 @@ import { ImageGridModule } from './components/image-grid/image-grid.module';
     StoreLinksModule,
     TermsLinksModule,
     UserInfoTileModule,
+    LoadingSpinnerModule,
     TranslateModule,
     MatButtonModule,
     MatBottomSheetModule,

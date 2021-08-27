@@ -13,4 +13,10 @@ describe('EnvironmentService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  describe('#example', () => {
+    it('should return instance', () => {
+      expect(EnvironmentService.example()).toBeDefined();
+    });
+  });
 });

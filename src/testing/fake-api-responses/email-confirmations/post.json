@@ -1,0 +1,14 @@
+{
+  "message": "Account successfully activated",
+  "user": {
+    "id": 4,
+    "name": "Touré Holder",
+    "country_calling_code": "55",
+    "phone_number": "61981178515",
+    "is_phone_verified": true,
+    "image_url": "https://firebasestorage.googleapis.com/v0/b/givapp-938de.appspot.com/o/users%2F4%2Fphotos%2F1618477586065.jpg?alt=media&token=a4fa5755-d101-4e6a-9d58-44fe72841904",
+    "bio": "Tô desapegando geral! Entrego as doações no Cine Brasília 106/107 Sul. Se vc se interessar por algo, só entrar em contato 👍",
+    "admin": false,
+    "created_at": "2019-03-23T15:43:35.117Z"
+  }
+}

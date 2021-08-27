@@ -1,0 +1,68 @@
+<div class="app-page-wrapper">
+  <div
+    class="component-loading-state component-container"
+    data-test="loading-state"
+    *ngIf="!emailConfirmation && !emailConfirmationError"
+  >
+    <h2>{{ 'email_confirmation_loading_state_title' | translate }}</h2>
+
+    <div class="component-spacer"></div>
+
+    <app-loading-spinner></app-loading-spinner>
+
+    <div class="component-spacer"></div>
+
+    <p>{{ 'email_confirmation_loading_state_message' | translate }}</p>
+  </div>
+
+  <div
+    class="component-success-state component-container"
+    data-test="success-state"
+    *ngIf="emailConfirmation"
+  >
+    <h2>{{ 'email_confirmation_success_state_title' | translate }}</h2>
+
+    <div class="component-spacer"></div>
+
+    <span class="material-icons"> check_circle </span>
+
+    <div class="component-spacer"></div>
+
+    <p>
+      {{ 'common_thank_you' | translate }}
+      {{ emailConfirmation?.user?.name }}!
+    </p>
+
+    <p>
+      {{ 'email_confirmation_success_state_message' | translate }}
+    </p>
+  </div>
+
+  <div
+    class="component-error-state component-container"
+    data-test="error-state"
+    *ngIf="emailConfirmationError"
+  >
+    <h2>{{ 'email_confirmation_error_state_title' | translate }}</h2>
+
+    <div class="component-spacer"></div>
+
+    <span class="material-icons"> sentiment_very_dissatisfied </span>
+
+    <div class="component-small-spacer"></div>
+
+    <p>{{ 'email_confirmation_error_state_message' | translate }}</p>
+
+    <div class="component-need-help-container">
+      {{ 'email_confirmation_error_state_need_help' | translate }}
+
+      <a
+        [routerLink]=""
+        data-test="report-button"
+        (click)="requestAssistance()"
+      >
+        {{ 'email_confirmation_error_state_button_text' | translate }}
+      </a>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ describe('HttpService', () => {
   let mockEnvironment: EnvironmentService;
 
   beforeEach(() => {
-    mockHttpClient = jasmine.createSpyObj('HttpClient', ['get']);
+    mockHttpClient = jasmine.createSpyObj('HttpClient', ['get', 'post']);
     mockEnvironment = {
       production: false,
       baseApiUrl: 'https://example.com',
@@ -89,6 +89,59 @@ describe('HttpService', () => {
 
       // When
       service.get('any').subscribe((data) => {
+        // Then
+        expect(data).toEqual(fooBar);
+      });
+    });
+  });
+
+  describe('#post', () => {
+    it('should prefix path with base url when url it is RELATIVE', () => {
+      // Given
+      const path = '/home/categories/featured';
+      const fooBar = { foo: 'bar' };
+
+      // When
+      service.post(path, fooBar);
+
+      // Then
+      expect(mockHttpClient.post).toHaveBeenCalledWith(
+        `${mockEnvironment.baseApiUrl}${path}`,
+        fooBar
+      );
+    });
+
+    it('should NOT prefix path with base url when url it is ABOSULTE', () => {
+      // Given
+      const path = 'https://example.com/home/categories/featured';
+      const fooBar = { foo: 'bar' };
+
+      // When
+      service.post(path, fooBar);
+
+      // Then
+      expect(mockHttpClient.post).toHaveBeenCalledWith(path, fooBar);
+    });
+
+    it('should call http client with body', () => {
+      // Given
+      const path = 'https://example.com/home/categories/featured';
+      const fooBar = { foo: 'bar' };
+
+      // When
+      service.post(path, fooBar);
+
+      // Then
+      expect(mockHttpClient.post).toHaveBeenCalledWith(path, fooBar);
+    });
+
+    it('should return Observable from http client', () => {
+      // Given
+      const fooBar = { foo: 'bar' };
+      mockHttpClient.post.and.returnValue(of(fooBar));
+
+      // When
+      service.post('any', fooBar).subscribe((data) => {
         // Then
         expect(data).toEqual(fooBar);
       });

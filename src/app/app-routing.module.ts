@@ -27,6 +27,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'email-confirmation',
+    loadChildren: () =>
+      import('./pages/email-confirmation/email-confirmation.module').then(
+        (m) => m.EmailConfirmationModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

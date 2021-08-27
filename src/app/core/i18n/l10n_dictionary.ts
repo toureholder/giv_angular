@@ -16,9 +16,49 @@ export const dictionary: L10nDictionary = {
     en: 'All rights reserved',
     pt: 'Todos os direitos reservados',
   },
+  common_thank_you: {
+    en: 'Thank you',
+    pt: 'Obrigado',
+  },
   download_app_cta_text: {
     en: 'Baixe o app para ver todos os anúncios e para criar os seus.',
     pt: 'Baixe o app para ver todos os anúncios e para criar os seus.',
+  },
+  email_confirmation_loading_state_title: {
+    en: 'Verifying email address...',
+    pt: 'Verificando endereço de email...',
+  },
+  email_confirmation_loading_state_message: {
+    en: 'Please wait.',
+    pt: 'Por favor aguarde.',
+  },
+  email_confirmation_success_state_title: {
+    en: 'You account has been activated!',
+    pt: 'Successo! Sua conta foi ativada!',
+  },
+  email_confirmation_success_state_message: {
+    en: 'Your email has been verified. Use your email and password to login in to the app.',
+    pt: 'Seu e-mail foi confirmado. Use seu e-mail e senha para fazer login no aplicativo.',
+  },
+  email_confirmation_error_state_title: {
+    en: 'Something went wrong.',
+    pt: 'Houve um problema.',
+  },
+  email_confirmation_error_state_message: {
+    en: `We weren't able to verify your email address.`,
+    pt: 'Não foi possível confirmar seu e-mail.',
+  },
+  email_confirmation_error_state_need_help: {
+    en: 'Need help confirming your email address?',
+    pt: 'Precisa de ajuda para confrimar seu email?',
+  },
+  email_confirmation_error_state_button_text: {
+    en: 'Talk to us.',
+    pt: 'Fale conosco.',
+  },
+  email_confirmation_error_reques_assistance_message: {
+    en: 'Hello! Something went wrong while verifying my emil: {{ value }}',
+    pt: 'Olá! Não foi possível verificar meu e-mail: {{ value }}',
   },
   i_want_it: {
     en: 'I want it',
