@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { Listing } from '@shared/models/listing/listing.model';
-import getCategoriesJson from '@testing/fake-api-responses/home/categories/featured/get.json';
 import { UseValueProvider } from '@testing/helpers';
 import { of } from 'rxjs';
 import { ListingApiService } from './api/listing-api.service';

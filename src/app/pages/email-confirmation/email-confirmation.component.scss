@@ -1,0 +1,42 @@
+:host {
+  --component-state-icon-size: 80px;
+}
+
+.component-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.component-spacer {
+  height: calc(var(--app-default-spacing) * 4);
+}
+
+.component-success-state {
+  .material-icons {
+    color: #66bb6a;
+    font-size: var(--component-state-icon-size);
+  }
+}
+
+.component-error-state {
+  .material-icons {
+    color: #f44336;
+    font-size: 80px;
+  }
+}
+
+app-loading-spinner {
+  --app-loading-spinner-size: var(--component-state-icon-size);
+  --app-loading-spinner-dot-size: 10px;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+button {
+  margin-top: calc(var(--app-default-spacing) * 2);
+}
