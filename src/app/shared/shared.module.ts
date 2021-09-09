@@ -11,6 +11,7 @@ import { DownloadAppCtaModule } from './components/download-app-cta/download-app
 import { UserInfoTileModule } from './components/user-info-tile/user-info-tile.module';
 import { ImageGridModule } from './components/image-grid/image-grid.module';
 import { LoadingSpinnerModule } from './components/loading-spinner/loading-spinner.module';
+import { UserSupportLinkModule } from './components/user-support-link/user-support-link.module';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { LoadingSpinnerModule } from './components/loading-spinner/loading-spinn
     StoreLinksModule,
     TermsLinksModule,
     UserInfoTileModule,
+    UserSupportLinkModule,
     LoadingSpinnerModule,
     MatButtonModule,
     MatBottomSheetModule,
@@ -36,6 +38,7 @@ import { LoadingSpinnerModule } from './components/loading-spinner/loading-spinn
     StoreLinksModule,
     TermsLinksModule,
     UserInfoTileModule,
+    UserSupportLinkModule,
     LoadingSpinnerModule,
     TranslateModule,
     MatButtonModule,

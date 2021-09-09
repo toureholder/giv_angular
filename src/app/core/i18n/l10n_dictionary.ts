@@ -50,13 +50,13 @@ export const dictionary: L10nDictionary = {
   },
   email_confirmation_error_state_need_help: {
     en: 'Need help confirming your email address?',
-    pt: 'Precisa de ajuda para confrimar seu email?',
+    pt: 'Precisa de ajuda para confirmar seu email?',
   },
   email_confirmation_error_state_button_text: {
     en: 'Talk to us.',
     pt: 'Fale conosco.',
   },
-  email_confirmation_error_reques_assistance_message: {
+  email_confirmation_error_request_assistance_message: {
     en: 'Hello! Something went wrong while verifying my emil: {{ value }}',
     pt: 'Olá! Não foi possível verificar meu e-mail: {{ value }}',
   },
@@ -149,5 +149,49 @@ export const dictionary: L10nDictionary = {
   terms_acceptance_caption_privacy: {
     en: 'Privacy policy',
     pt: 'Política de privacidade',
+  },
+  reset_password_messsage: {
+    en: 'Ok! Go ahead and create a new password for your accont.',
+    pt: 'Blz! Agora você pode criar um nova senha para sua conta.',
+  },
+  reset_password_input_label: {
+    en: 'Enter a new password',
+    pt: 'Insira uma nova senha',
+  },
+  reset_password_input_hint: {
+    en: 'Passwords should be at least 6 characters long.',
+    pt: 'A senha deve ter pelo menos 6 caractéres.',
+  },
+  reset_password_submit_buton: {
+    en: 'Change password',
+    pt: 'Alterar senha',
+  },
+  reset_password_alert_success_title: {
+    en: 'Password updated!',
+    pt: 'Senha alterada com sucesso!',
+  },
+  reset_password_alert_success_message: {
+    en: 'You can log in with your new password.',
+    pt: 'Você já pode acessar sua conta com sua nova senha.',
+  },
+  reset_password_alert_error_title: {
+    en: 'Something went wrong',
+    pt: 'Houve um erro.',
+  },
+  reset_password_alert_error_message: {
+    en: "We weren't able to change your password.",
+    pt: 'Não foi possível alterar sua senha.',
+  },
+  reset_password_help_question: {
+    en: 'Need help resetting you password?',
+    pt: 'Precisa de ajuda para redifinir sua senha?',
+  },
+  reset_password_support_message: {
+    en: "Hi! I'm having problems resseting my password",
+    pt: 'Olá! Não estou conseguindo redefinir minha senha.',
+  },
+  shared_talk_to_us: {
+    en: 'Talk to us.',
+    pt: 'Fale conosco.',
   },
 };

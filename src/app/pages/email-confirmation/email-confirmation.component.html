@@ -53,16 +53,13 @@
 
     <p>{{ 'email_confirmation_error_state_message' | translate }}</p>
 
-    <div class="component-need-help-container">
-      {{ 'email_confirmation_error_state_need_help' | translate }}
-
-      <a
-        [routerLink]=""
-        data-test="report-button"
-        (click)="requestAssistance()"
-      >
-        {{ 'email_confirmation_error_state_button_text' | translate }}
-      </a>
-    </div>
+    <app-user-support-link
+      [questionText]="'email_confirmation_error_state_need_help' | translate"
+      [linkText]="'shared_talk_to_us' | translate"
+      [supportMessageText]="
+        'email_confirmation_error_request_assistance_message'
+          | translate: { value: email }
+      "
+    ></app-user-support-link>
   </div>
 </div>

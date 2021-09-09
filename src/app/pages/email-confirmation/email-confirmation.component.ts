@@ -15,26 +15,17 @@ import { EmailConfirmationService } from './services/email-confirmation.service'
 export class EmailConfirmationComponent implements OnInit {
   emailConfirmation?: EmailConfirmation;
   emailConfirmationError?: any;
-  private email?: string;
+  email?: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private emailConfirmationService: EmailConfirmationService,
-    private textMessaging: TextMessagingService,
-    private environment: EnvironmentService,
-    private translate: TranslateService
+    private emailConfirmationService: EmailConfirmationService
   ) {}
 
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.queryParams;
     this.email = params.email;
     this.getEmailConfirmation(params);
-  }
-
-  requestAssistance() {
-    this.getMessage().subscribe((message: string) => {
-      this.textMessaging.send(this.environment.customerServiceNumber, message);
-    });
   }
 
   private getEmailConfirmation(params: Params) {
@@ -55,14 +46,5 @@ export class EmailConfirmationComponent implements OnInit {
           this.emailConfirmationError = error;
         }
       );
-  }
-
-  private getMessage(): Observable<any> {
-    return this.translate.get(
-      'email_confirmation_error_reques_assistance_message',
-      {
-        value: this.email,
-      }
-    );
   }
 }

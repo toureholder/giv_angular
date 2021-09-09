@@ -34,19 +34,9 @@
   }
 }
 
-.component-need-help-container {
-  margin-top: calc(var(--app-default-spacing) * 4);
-  display: flex;
-  flex-direction: column;
-}
-
 app-loading-spinner {
   --app-loading-spinner-size: var(--component-state-icon-size);
   --app-loading-spinner-dot-size: 10px;
-}
-
-p {
-  font-size: 1.6rem;
 }
 
 button {
