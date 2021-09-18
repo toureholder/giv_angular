@@ -1,4 +1,35 @@
 nav {
   height: 64px;
   border-bottom: 1px solid var(--app-divider-color);
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.app-page-wrapper {
+  height: 100%;
+  padding: 0 2.4rem 0 2.4rem;
+}
+
+.app-brand {
+  height: 100%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--app-primary-color);
+}
+
+.app-brand .quer {
+  color: var(--app-accent-color);
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: var(--app-default-spacing);
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
