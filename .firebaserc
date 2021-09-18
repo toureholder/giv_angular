@@ -9,7 +9,7 @@
           "giv-web-app-staging"
         ],
         "production": [
-          "giv-web-app-staging"
+          "alguemquer"
         ]
       }
     }
